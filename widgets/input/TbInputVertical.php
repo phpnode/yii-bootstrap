@@ -144,7 +144,73 @@ class TbInputVertical extends TbInput
 		echo $this->getError().$this->getHint();
 	}
 
-	/**
+    /**
+     * Renders an email field
+     * @return string the rendered content
+     */
+    protected function emailField()
+    {
+        echo $this->getLabel();
+        echo $this->getPrepend();
+        echo $this->form->emailField($this->model, $this->attribute, $this->htmlOptions);
+        echo $this->getAppend();
+        echo $this->getError().$this->getHint();
+    }
+
+    /**
+     * Renders a URL field.
+     * @return string the rendered content
+     */
+    protected function urlField()
+    {
+        echo $this->getLabel();
+        echo $this->getPrepend();
+        echo $this->form->urlField($this->model, $this->attribute, $this->htmlOptions);
+        echo $this->getAppend();
+        echo $this->getError().$this->getHint();
+    }
+
+    /**
+     * Renders a number field.
+     * @return string the rendered content
+     */
+    protected function numberField()
+    {
+        echo $this->getLabel();
+        echo $this->getPrepend();
+        echo $this->form->numberField($this->model, $this->attribute, $this->htmlOptions);
+        echo $this->getAppend();
+        echo $this->getError().$this->getHint();
+    }
+
+    /**
+     * Renders a date field.
+     * @return string the rendered content
+     */
+    protected function dateField()
+    {
+        echo $this->getLabel();
+        echo $this->getPrepend();
+        echo $this->form->dateField($this->model, $this->attribute, $this->htmlOptions);
+        echo $this->getAppend();
+        echo $this->getError().$this->getHint();
+    }
+
+    /**
+     * Renders a time field.
+     * @return string the rendered content
+     */
+    protected function timeField()
+    {
+        echo $this->getLabel();
+        echo $this->getPrepend();
+        echo $this->form->timeField($this->model, $this->attribute, $this->htmlOptions);
+        echo $this->getAppend();
+        echo $this->getError().$this->getHint();
+    }
+
+
+    /**
 	 * Renders a CAPTCHA.
 	 * @return string the rendered content
 	 */

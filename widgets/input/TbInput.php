@@ -25,6 +25,11 @@ abstract class TbInput extends CInputWidget
 	const TYPE_RADIOLIST_INLINE = 'radiobuttonlist_inline';
 	const TYPE_TEXTAREA = 'textarea';
 	const TYPE_TEXT = 'textfield';
+    const TYPE_EMAIL = 'emailfield';
+    const TYPE_NUMBER = 'numberfield';
+    const TYPE_URL = 'urlfield';
+    const TYPE_DATE = 'datefield';
+    const TYPE_TIME = 'timefield';
 	const TYPE_CAPTCHA = 'captcha';
 	const TYPE_UNEDITABLE = 'uneditable';
 
@@ -222,6 +227,26 @@ abstract class TbInput extends CInputWidget
 				$this->textField();
 				break;
 
+            case self::TYPE_EMAIL:
+                $this->emailField();
+                break;
+
+            case self::TYPE_URL:
+                $this->urlField();
+                break;
+
+            case self::TYPE_NUMBER:
+                $this->numberField();
+                break;
+
+            case self::TYPE_DATE:
+                $this->dateField();
+                break;
+
+            case self::TYPE_TIME:
+                $this->timeField();
+                break;
+
 			case self::TYPE_CAPTCHA:
 				$this->captcha();
 				break;
@@ -300,13 +325,13 @@ abstract class TbInput extends CInputWidget
 		else
 			return '';
 	}
-	
+
 	/**
 	 * Returns the id that should be used for the specified attribute
 	 * @param string $attribute the attribute
-	 * @return string the id 
+	 * @return string the id
 	 */
-	protected function getAttributeId($attribute) 
+	protected function getAttributeId($attribute)
 	{
 		return isset($this->htmlOptions['id'])
 				? $this->htmlOptions['id']
@@ -453,6 +478,46 @@ abstract class TbInput extends CInputWidget
 	 * @abstract
 	 */
 	abstract protected function textField();
+
+
+    /**
+     * Renders an email field
+     * @return string the rendered content
+     * @abstract
+     */
+    abstract protected function emailField();
+
+
+
+    /**
+     * Renders a URL field.
+     * @return string the rendered content
+     * @abstract
+     */
+    abstract protected function urlField();
+
+
+    /**
+     * Renders a number field.
+     * @return string the rendered content
+     * @abstract
+     */
+    abstract protected function numberField();
+
+    /**
+     * Renders a date field.
+     * @return string the rendered content
+     * @abstract
+     */
+    abstract protected function dateField();
+
+    /**
+     * Renders a time field.
+     * @return string the rendered content
+     * @abstract
+     */
+    abstract protected function timeField();
+
 
 	/**
 	 * Renders a CAPTCHA.

@@ -186,6 +186,67 @@ class TbActiveForm extends CActiveForm
 		return $this->inputRow(TbInput::TYPE_TEXT, $model, $attribute, null, $htmlOptions);
 	}
 
+    /**
+     * Renders an email field input row.
+     * @param CModel $model the data model
+     * @param string $attribute the attribute
+     * @param array $htmlOptions additional HTML attributes
+     * @return string the generated row
+     */
+    public function emailFieldRow($model, $attribute, $htmlOptions = array())
+    {
+        return $this->inputRow(TbInput::TYPE_EMAIL, $model, $attribute, null, $htmlOptions);
+    }
+
+    /**
+     * Renders a url field input row.
+     * @param CModel $model the data model
+     * @param string $attribute the attribute
+     * @param array $htmlOptions additional HTML attributes
+     * @return string the generated row
+     */
+    public function urlFieldRow($model, $attribute, $htmlOptions = array())
+    {
+        return $this->inputRow(TbInput::TYPE_URL, $model, $attribute, null, $htmlOptions);
+    }
+
+    /**
+     * Renders a number field input row.
+     * @param CModel $model the data model
+     * @param string $attribute the attribute
+     * @param array $htmlOptions additional HTML attributes
+     * @return string the generated row
+     */
+    public function numberFieldRow($model, $attribute, $htmlOptions = array())
+    {
+        return $this->inputRow(TbInput::TYPE_NUMBER, $model, $attribute, null, $htmlOptions);
+    }
+
+
+    /**
+     * Renders a date field input row.
+     * @param CModel $model the data model
+     * @param string $attribute the attribute
+     * @param array $htmlOptions additional HTML attributes
+     * @return string the generated row
+     */
+    public function dateFieldRow($model, $attribute, $htmlOptions = array())
+    {
+        return $this->inputRow(TbInput::TYPE_DATE, $model, $attribute, null, $htmlOptions);
+    }
+
+    /**
+     * Renders a time field input row.
+     * @param CModel $model the data model
+     * @param string $attribute the attribute
+     * @param array $htmlOptions additional HTML attributes
+     * @return string the generated row
+     */
+    public function timeFieldRow($model, $attribute, $htmlOptions = array())
+    {
+        return $this->inputRow(TbInput::TYPE_TIME, $model, $attribute, null, $htmlOptions);
+    }
+
 	/**
 	 * Renders a text area input row.
 	 * @param CModel $model the data model
